@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contactsRedux/operations';
-import { ContactForm } from '../components/ContactForm/ContactForm';
-import { ContactList } from '../components/ContactList/ContactList';
-import { ContactFilter } from '../components/ContactFilter/ContactFilter';
-import { Wrapper, Title } from '../components/App/App.styled';
-import { Loader } from '../components/Loader/Loader';
+import { ContactForm } from '../../components/ContactForm/ContactForm';
+import { ContactList } from '../../components/ContactList/ContactList';
+import { ContactFilter } from '../../components/ContactFilter/ContactFilter';
+import {
+  ContactsWrapper,
+  ContactsTitle,
+  ContactsListTitle,
+} from './ContactsPage.styled';
+import { Loader } from '../../components/Loader/Loader';
 import {
   selectContacts,
   selectIsLoading,
@@ -23,18 +27,18 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <Wrapper>
-      <Title>Phone Book</Title>
+    <ContactsWrapper>
+      <ContactsTitle>Phone Book</ContactsTitle>
       <ContactForm />
       {isLoading && !error && <Loader loading={isLoading} />}
       {contacts.length > 0 && (
         <>
-          <Title>Contacts</Title>
+          <ContactsListTitle>Contacts</ContactsListTitle>
           <ContactFilter />
           <ContactList />
         </>
       )}
-    </Wrapper>
+    </ContactsWrapper>
   );
 };
 

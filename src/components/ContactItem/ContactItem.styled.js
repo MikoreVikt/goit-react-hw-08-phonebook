@@ -1,35 +1,26 @@
 import styled from 'styled-components';
+import { Button } from 'components/RegisterForm/RegisterForm.styled';
 
 export const Li = styled.li`
   display: flex;
   align-items: center;
-  width: 100%;
   justify-content: space-between;
+  padding: 0 15px;
+  color: white;
+  opacity: 0.8;
 `;
 
 export const P = styled.p`
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 18px;
   margin: 0;
+  padding: 0;
 `;
 
-export const Btn = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  font-weight: 700;
-  margin: 0 10px 0 15px;
-  padding: 5px;
-  background-color: transparent;
-  box-shadow: 0 0 2px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+export const Span = styled.span`
+  opacity: 0.7;
+`;
 
-  &:hover {
-    transform: scale(1.1);
-  }
+export const Btn = styled(Button)`
+  width: 100px;
+  margin: 0;
+  padding: 5px;
 `;

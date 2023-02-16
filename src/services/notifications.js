@@ -1,10 +1,10 @@
 import 'react-toastify/dist/ReactToastify.min.css';
 import { toast } from 'react-toastify';
 
-export const errorMessage = message => {
+export const errorMessage = message =>
   toast.error(message, {
     position: 'top-right',
-    autoClose: 3000,
+    autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -12,12 +12,11 @@ export const errorMessage = message => {
     progress: undefined,
     theme: 'colored',
   });
-};
 
-export const successMessage = message => {
+export const successMessage = message =>
   toast.success(message, {
     position: 'top-right',
-    autoClose: 3000,
+    autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -25,4 +24,3 @@ export const successMessage = message => {
     progress: undefined,
     theme: 'colored',
   });
-};

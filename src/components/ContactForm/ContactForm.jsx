@@ -1,6 +1,5 @@
-import { Form, Label, Input, Button } from './ContactForm.styled';
+import { Form, Label, Input, Btn } from './ContactForm.styled';
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contactsRedux/selectors';
 import { addContact } from 'redux/contactsRedux/operations';
@@ -13,41 +12,23 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  const handleInputChange = e => {
-    const { name, value } = e.currentTarget;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        return errorMessage(`Error in ${name}`);
-    }
-  };
-
-  const addNewContact = (name, number) => {
-    if (checkAvailability(name)) {
-      return errorMessage(`${name} is already in contacts`);
-    }
-
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
-
-    dispatch(addContact(newContact));
-    successMessage(`${name} is added to contacts`);
-  };
-
   const checkAvailability = name =>
     contacts.find(contact => contact.name === name);
 
   const handleSubmit = e => {
     e.preventDefault();
-    addNewContact({ name, number });
+    if (checkAvailability(name)) {
+      return errorMessage(`${name} is already in contacts`);
+    }
+    if (name.length > 15 || name.length < 3) {
+      return errorMessage(`Please enter a valid name!`);
+    }
+    if (number.length > 13 || number.length < 6) {
+      return errorMessage(`Please enter a valid number!`);
+    }
+
+    dispatch(addContact({ name, number }));
+    successMessage(`${name} is added to contacts`);
     setName('');
     setNumber('');
   };
@@ -57,7 +38,7 @@ export const ContactForm = () => {
       <Label>
         Name
         <Input
-          onChange={handleInputChange}
+          onChange={e => setName(e.currentTarget.value)}
           value={name}
           type="text"
           name="name"
@@ -69,7 +50,7 @@ export const ContactForm = () => {
       <Label>
         Number
         <Input
-          onChange={handleInputChange}
+          onChange={e => setNumber(e.currentTarget.value)}
           value={number}
           type="tel"
           name="number"
@@ -78,7 +59,7 @@ export const ContactForm = () => {
           required
         />
       </Label>
-      <Button>Add contact</Button>
+      <Btn>Add contact</Btn>
     </Form>
   );
 };

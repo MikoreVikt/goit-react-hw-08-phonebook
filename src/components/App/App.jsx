@@ -7,11 +7,12 @@ import { Layout } from '../Layout/Layout';
 import { Loader } from 'components/Loader/Loader';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivatedRoute } from 'components/PrivateRoute';
+import { ToastContainer } from 'react-toastify';
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage'));
 const Register = lazy(() => import('../../pages/RegisterPage'));
 const Login = lazy(() => import('../../pages/LoginPage'));
-const Contacts = lazy(() => import('../../pages/ContactsPage'));
+const Contacts = lazy(() => import('../../pages/ContactsPage/ContactsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,33 +25,39 @@ export const App = () => {
   return isRefreshing ? (
     <Loader />
   ) : (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<Home />} />
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivatedRoute redirectTo="/login" component={<Contacts />} />
-          }
-        />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Home />} />
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<Register />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivatedRoute redirectTo="/login" component={<Contacts />} />
+            }
+          />
+        </Route>
+      </Routes>
+      <ToastContainer />
+    </>
   );
 };
