@@ -2,8 +2,8 @@ import { Form, Label, Input, Button } from './ContactForm.styled';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contactsRedux/selectors';
+import { addContact } from 'redux/contactsRedux/operations';
 import { errorMessage, successMessage } from 'services/notifications';
 
 export const ContactForm = () => {
@@ -23,7 +23,7 @@ export const ContactForm = () => {
         setNumber(value);
         break;
       default:
-        return console.log(`Error in ${e.target.name}`);
+        return errorMessage(`Error in ${name}`);
     }
   };
 
@@ -35,7 +35,7 @@ export const ContactForm = () => {
     const newContact = {
       id: nanoid(),
       name,
-      phone: number,
+      number,
     };
 
     dispatch(addContact(newContact));
@@ -47,7 +47,7 @@ export const ContactForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addNewContact(name, number);
+    addNewContact({ name, number });
     setName('');
     setNumber('');
   };
