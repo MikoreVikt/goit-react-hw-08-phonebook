@@ -21,6 +21,7 @@ export const P = styled.p`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    font-size: 20px;
     padding: 2px 5px;
   }
 

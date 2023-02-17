@@ -5,7 +5,7 @@ export const ContactsWrapper = styled.section`
   margin: 0px auto;
   padding: 40px;
 
-  @media creen and (max-width: 360px) {
+  @media creen and (max-width: 768px) {
     max-width: 80%;
   }
 `;
