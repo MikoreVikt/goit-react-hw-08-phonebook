@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   column-gap: 30px;
+
+  @media screen and (max-width: 768px) {
+    column-gap: 10px;
+  }
 `;
 
 export const UserName = styled.p`
@@ -11,6 +15,14 @@ export const UserName = styled.p`
   font-weight: 500;
   font-size: 18px;
   opacity: 0.8;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 360px) {
+    display: none;
+    opacity: 0;
+  }
 `;
 
 export const UserSpan = styled.span`
@@ -36,5 +48,15 @@ export const UserButton = styled.button`
     color: rgba(0, 0, 0, 0.6);
     outline: none;
     background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 `;

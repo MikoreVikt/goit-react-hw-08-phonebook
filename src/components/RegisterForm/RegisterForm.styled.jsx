@@ -73,11 +73,11 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  margin: 0 auto;
-  width: 200px;
-  padding: 15px;
   font-weight: 500;
   font-size: 16px;
+  width: 200px;
+  margin: 0 auto;
+  padding: 15px;
   color: #fff;
   background: transparent;
   border: none;
@@ -93,6 +93,15 @@ export const Button = styled.button`
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    width: 150px;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 12px;
+    width: 100px;
   }
 `;
 

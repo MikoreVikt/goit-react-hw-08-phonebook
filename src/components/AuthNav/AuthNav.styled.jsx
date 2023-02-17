@@ -10,25 +10,35 @@ export const Ul = styled.ul`
 `;
 
 export const StyledLink = styled(NavLink)`
-  padding: 8px 16px;
-  color: white;
-  opacity: 0.8;
   font-weight: 500;
   font-size: 18px;
+  padding: 8px 16px;
+  color: white;
   border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out 0s;
   background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out 0s;
 
   &:hover,
   &:focus {
     color: rgba(0, 0, 0, 0.6);
-    outline: none;
     background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
   }
 
   &.active {
     color: rgba(0, 0, 0, 0.6);
     background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  @media screen and (max-width: 360px) {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 `;

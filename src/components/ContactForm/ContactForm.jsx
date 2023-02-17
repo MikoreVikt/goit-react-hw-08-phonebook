@@ -20,10 +20,10 @@ export const ContactForm = () => {
     if (checkAvailability(name)) {
       return errorMessage(`${name} is already in contacts`);
     }
-    if (name.length > 15 || name.length < 3) {
+    if (name.length > 20 || name.length < 3) {
       return errorMessage(`Please enter a valid name!`);
     }
-    if (number.length > 13 || number.length < 6) {
+    if (number.length > 20 || number.length < 6) {
       return errorMessage(`Please enter a valid number!`);
     }
 

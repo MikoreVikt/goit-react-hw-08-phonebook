@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Input } from 'components/RegisterForm/RegisterForm.styled';
 
 export const Form = styled.form`
-  width: 50%;
+  width: 40%;
   height: 80px;
   margin: 0 auto;
   padding: 20px;
@@ -13,6 +13,16 @@ export const Form = styled.form`
   backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 360px) {
+    width: 90%;
+  }
 `;
 export const Label = styled.label`
   display: flex;
@@ -20,6 +30,10 @@ export const Label = styled.label`
   color: #fff;
   opacity: 0.7;
   gap: 5px;
+
+  @media screen and (max-width: 360px) {
+    font-size: 14px;
+  }
 `;
 
 export const InputStyled = styled(Input)`

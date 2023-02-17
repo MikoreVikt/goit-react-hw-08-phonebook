@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Li, P, Span, Btn } from './ContactItem.styled';
+import { Li, P, Span, BtnWrap, Btn } from './ContactItem.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactsRedux/operations';
 import { successMessage } from 'services/notifications';
@@ -20,7 +20,9 @@ export const ContactItem = ({ id, name, number }) => {
       <P>
         <Span>Number: </Span> {number}
       </P>
-      <Btn onClick={handleDelete}>Delete</Btn>
+      <BtnWrap>
+        <Btn onClick={handleDelete}>Delete</Btn>
+      </BtnWrap>
     </Li>
   );
 };

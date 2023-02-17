@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from 'components/RegisterForm/RegisterForm.styled';
 
 export const Form = styled.form`
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.3);
   padding: 20px;
@@ -12,6 +12,16 @@ export const Form = styled.form`
   backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 360px) {
+    width: 90%;
+  }
 `;
 
 export const Label = styled.label`
