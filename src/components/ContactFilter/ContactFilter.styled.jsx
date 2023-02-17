@@ -38,4 +38,8 @@ export const InputStyled = styled(Input)`
   position: relative;
   width: 60%;
   margin: 0 auto;
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+  }
 `;

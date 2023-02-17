@@ -56,6 +56,10 @@ export const Input = styled.input`
     box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
     outline: none;
   }
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+  }
 `;
 
 export const Btn = styled(Button)`
