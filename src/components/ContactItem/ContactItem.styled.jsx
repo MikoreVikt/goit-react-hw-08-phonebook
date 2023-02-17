@@ -5,8 +5,11 @@ export const Li = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 5px 15px;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 4px 4px 60px rgb(0 0 0 / 20%);
   opacity: 0.8;
 
   @media screen and (max-width: 768px) {

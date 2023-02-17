@@ -117,11 +117,6 @@ export const Button = styled.button`
     font-size: 14px;
     width: 150px;
   }
-
-  @media screen and (max-width: 400px) {
-    font-size: 12px;
-    width: 100px;
-  }
 `;
 
 const Drop = styled.div`
