@@ -21,12 +21,8 @@ export const P = styled.p`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    font-size: 20px;
-    padding: 2px 5px;
-  }
-
-  @media screen and (max-width: 400px) {
-    font-size: 12px;
+    font-size: 18px;
+    padding: 5px;
   }
 `;
 
@@ -43,21 +39,13 @@ export const BtnWrap = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 2px 5px;
-    justify-content: flex-start;
+    justify-content: center;
   }
 `;
 
 export const Btn = styled(Button)`
   width: 100px;
+  font-size: 18px;
   margin: 0;
-  padding: 5px;
-
-  @media screen and (max-width: 768px) {
-    width: 80px;
-  }
-
-  @media screen and (max-width: 400px) {
-    width: 60px;
-    padding: 2px;
-  }
+  padding: 10px;
 `;
