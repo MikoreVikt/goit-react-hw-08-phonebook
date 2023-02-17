@@ -25,7 +25,7 @@ export const P = styled.p`
     padding: 2px 5px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 12px;
   }
 `;
@@ -56,7 +56,7 @@ export const Btn = styled(Button)`
     width: 80px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     width: 60px;
     padding: 2px;
   }

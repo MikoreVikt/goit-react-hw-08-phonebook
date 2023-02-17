@@ -32,7 +32,7 @@ export const Form = styled.form`
     padding: 35px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     width: 200px;
     padding: 25px;
   }
@@ -51,7 +51,7 @@ export const FormTitle = styled.h4`
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     margin-bottom: 30px;
   }
 `;
@@ -118,7 +118,7 @@ export const Button = styled.button`
     width: 150px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 12px;
     width: 100px;
   }

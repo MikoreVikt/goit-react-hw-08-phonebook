@@ -19,7 +19,7 @@ export const UserName = styled.p`
   @media screen and (max-width: 768px) {
     font-size: 14px;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     display: none;
     opacity: 0;
   }
@@ -55,7 +55,7 @@ export const UserButton = styled.button`
     padding: 6px 14px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 10px;
     padding: 4px 8px;
   }

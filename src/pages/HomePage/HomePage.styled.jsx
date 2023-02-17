@@ -26,7 +26,7 @@ export const HomeTitle = styled.h1`
     font-size: 36px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 30px;
   }
 `;
@@ -45,7 +45,7 @@ export const HomeSecondTitle = styled.h2`
     font-size: 24px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 18px;
   }
 `;

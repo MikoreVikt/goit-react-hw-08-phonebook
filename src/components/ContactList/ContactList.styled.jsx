@@ -15,6 +15,6 @@ export const List = styled.ul`
   box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
 
   @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 80%;
   }
 `;

@@ -37,7 +37,7 @@ export const StyledLink = styled(NavLink)`
     padding: 6px 12px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 10px;
     padding: 4px 8px;
   }

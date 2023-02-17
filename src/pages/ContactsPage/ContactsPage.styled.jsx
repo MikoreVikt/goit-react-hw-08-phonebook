@@ -4,10 +4,6 @@ export const ContactsWrapper = styled.section`
   max-width: 60%;
   margin: 0px auto;
   padding: 40px;
-
-  @media creen and (max-width: 768px) {
-    max-width: 80%;
-  }
 `;
 
 export const ContactsTitle = styled.h3`

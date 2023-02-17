@@ -19,7 +19,7 @@ export const Form = styled.form`
   }
 
   @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 80%;
   }
 `;
 export const Label = styled.label`
@@ -29,7 +29,7 @@ export const Label = styled.label`
   opacity: 0.7;
   gap: 5px;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     font-size: 14px;
   }
 `;
