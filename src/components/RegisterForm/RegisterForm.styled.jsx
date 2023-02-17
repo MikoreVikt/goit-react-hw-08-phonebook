@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.div`
   position: absolute;
   transform: translate(-50%, -50%);
   top: 54%;
@@ -11,23 +11,34 @@ export const Form = styled.form`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 45px;
+  width: 250px;
   max-height: 400px;
+  padding: 45px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    margin: 10px;
+    margin: -10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 225px;
+    padding: 35px;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 200px;
+    padding: 25px;
   }
 `;
 
-export const FormTitle = styled.p`
+export const FormTitle = styled.h4`
   font-weight: 500;
   color: #fff;
   opacity: 0.7;
@@ -35,12 +46,19 @@ export const FormTitle = styled.p`
   margin-top: 0;
   margin-bottom: 60px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 360px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const Input = styled.input`
   font-weight: 500;
   font-size: 16px;
-  width: 200px;
   padding: 15px;
   margin-bottom: 35px;
   color: #fff;
@@ -99,6 +117,7 @@ export const Button = styled.button`
     font-size: 14px;
     width: 150px;
   }
+
   @media screen and (max-width: 360px) {
     font-size: 12px;
     width: 100px;
@@ -106,29 +125,32 @@ export const Button = styled.button`
 `;
 
 const Drop = styled.div`
+  position: absolute;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 10px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
-  position: absolute;
   transition: all 0.2s ease;
 `;
 
 export const DropFirst = styled(Drop)`
   height: 80px;
   width: 80px;
-  top: -20px;
-  left: -30px;
-  z-index: -1;
+  top: -30px;
+  left: -20px;
+
+  @media screen and (min-width: 768px) {
+    z-index: -1;
+  }
 `;
 
 export const DropSecond = styled(Drop)`
   height: 80px;
   width: 80px;
-  bottom: -30px;
-  right: -10px;
+  bottom: -40px;
+  right: -20px;
 `;
 
 export const DropThird = styled(Drop)`
@@ -144,6 +166,13 @@ export const DropForth = styled(Drop)`
   width: 120px;
   top: -50px;
   right: -50px;
+
+  @media screen and (max-width: 768px) {
+    height: 100px;
+    width: 100px;
+    right: -30px;
+    z-index: -1;
+  }
 `;
 
 export const DropFifth = styled(Drop)`
