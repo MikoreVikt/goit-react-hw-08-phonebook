@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { errorMessage } from 'services/notifications';
+import { errorMessage, infoMessage } from 'services/notifications';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -23,7 +23,9 @@ export const register = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      errorMessage(' Something wrong! Try again. ');
+      errorMessage(
+        ' This user already exists! Change your username or login. '
+      );
       return rejectWithValue(error.message);
     }
   }
@@ -41,7 +43,7 @@ export const logIn = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      errorMessage(' Something wrong! Try again. ');
+      errorMessage(' Wrong password or login! ');
       return rejectWithValue(error.message);
     }
   }
@@ -83,7 +85,7 @@ export const refreshUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      errorMessage(' Something wrong! Try again. ');
+      infoMessage(' Please, Log In! ');
       return rejectWithValue(error.message);
     }
   }

@@ -32,8 +32,13 @@ export const LoginForm = () => {
     <Container>
       <Form onSubmit={handleSubmit} autoComplete="off">
         <FormTitle>Welcome</FormTitle>
-        <Input type="email" name="email" placeholder="Email" />
-        <Input type="password" name="password" placeholder="Password" />
+        <Input type="email" name="email" placeholder="Email" required />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
         <Button type="submit">Log In</Button>
       </Form>
       <div>
